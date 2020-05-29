@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>NDI</ion-title>
+    <ion-buttons end>    <button ion-button color="primary"  (click)="myLogOut()"   > Deconnecter &nbsp;<ion-icon color ="primary" name="exit"></ion-icon></button> </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <img src="assets/imgs/gg.jpg"  />
+  </div>
+  <h1> <u> Envoyer photo avec localisation : </u></h1>
+  <br>
+
+    <ion-list>
+     
+      <ion-item>
+        <ion-label>Type de site</ion-label>
+        <ion-select placeholder="Selectionner type de site"  [(ngModel)]="typeS">
+          <ion-option   value="pylone"  > pylône</ion-option>
+          <ion-option   value="terrasse"  > terrasse</ion-option>
+          <ion-option   value="chateau eau"  >chateau d'eau</ion-option>
+          <ion-option   value="Autres"  > Autres</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Type d'intervention</ion-label>
+          <ion-select placeholder="Selectionner type d'intervention"  [(ngModel)]="typeN">
+            <ion-option   value="Site neuf"  >Site neuf</ion-option>
+            <ion-option   value="reamenagement"  >Réaménagement</ion-option>
+            <ion-option   value="BIS"  >BIS</ion-option>
+            <ion-option   value="Autres"  > Autres</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Adresse de site:</ion-label>
+           <ion-textarea type="text" [(ngModel)]="Adresse" ></ion-textarea>
+         </ion-item>
+         <ion-item>
+           <ion-label floating>Descriprtion:</ion-label>
+            <ion-textarea type="text" [(ngModel)]="description" ></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Date de jour:</ion-label>
+             <ion-textarea type="text" [(ngModel)]="date" ></ion-textarea>
+           </ion-item>
+          <div> <ion-row>
+            <ion-col class="upload-col">
+              <button ion-button class="submit-btn"  type="submit" (click)="capturedPicture()" >Select Photo
+                &nbsp; <ion-icon name="camera"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-label *ngIf="image"  >1</ion-label>
+          </ion-row>
+           </div>
+        </ion-list>
+
+
+        <ion-row>
+            <ion-col class="signup-col">
+              <button ion-button class="submit-btn" full type="submit" (click)="Send()" >Envoyer </button>
+            </ion-col>
+          </ion-row>
+
+</ion-content>

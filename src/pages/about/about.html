@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>NDI</ion-title>
+    <ion-buttons end>    <button ion-button color="primary"  (click)="myLogOut()"   > Deconnecter &nbsp;<ion-icon color ="primary" name="exit"></ion-icon></button> </ion-buttons>
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <img src="assets/imgs/gg.jpg"  />
+  </div>
+
+  <button ion-button  (click)="getPicture()"  class="photo"> Prendre photo &nbsp; <ion-icon name="camera"></ion-icon> </button>  
+  <button ion-button  (click)="localization()"  class="photo"> Prendre localization &nbsp; <ion-icon name="compass"></ion-icon> </button>
+
+<ion-card>
+  <ion-card-header> Current photo</ion-card-header>
+<ion-card-content>
+  <img [src]="capturedSnapURL" *ngIf="capturedSnapURL" />
+</ion-card-content>
+<ion-card-content *ngIf="latitude">
+  <label> Latitude: </label>  <h4> {{ latitude }}</h4>
+  <label> Longitude: </label>  <h4> {{ longitude }} </h4>
+  
+</ion-card-content>
+</ion-card>
+
